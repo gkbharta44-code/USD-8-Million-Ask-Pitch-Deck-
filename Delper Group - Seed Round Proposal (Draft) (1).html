@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Delper Group - Seed Round Proposal (Draft)</title>
+<style>
+:root{--bg:#0a0f1d;--bg2:#121829;--bg3:#1a233a;--text:#f1f5f9;--muted:#94a3b8;--accent:#38bdf8;--warn:#f59e0b;--border:#24324f;
+color-scheme:dark;}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){color-scheme:dark}}
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);display:flex;flex-direction:column;min-height:100%;padding:0 0 env(safe-area-inset-bottom,0px)}
+.top,.foot{display:flex;justify-content:space-between;align-items:center;padding:16px 32px;border-color:var(--border)}
+.top{border-bottom:1px solid var(--border);font-size:.8rem;letter-spacing:2px;font-weight:800;background:var(--bg);color:var(--text);padding-top:max(28px,calc(env(safe-area-inset-top,0px) + 16px));position:relative;z-index:5}
+.top span{color:var(--accent)}
+.tag{font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:#fca5a5;background:#ef444420;border:1px solid #ef444440;padding:4px 10px;border-radius:4px;font-weight:600}
+.stage{flex:1;overflow-y:auto;display:flex;flex-direction:column;padding:24px}
+.slide{display:none;width:100%;max-width:1100px;margin:auto;flex-direction:column;gap:20px;animation:fade .35s ease}
+.slide.active{display:flex}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+h1{font-size:2.8rem;line-height:1.1;font-weight:800}
+h2{font-size:2rem;font-weight:700}
+h3{font-size:.95rem;color:var(--accent);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+p,li{font-size:1.05rem;color:var(--muted);line-height:1.55}
+p strong,li strong{color:var(--text)}
+.sub{font-size:1.1rem;color:var(--muted);max-width:800px}
+.grid{display:grid;gap:16px;width:100%}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px}
+.card.hl{border-color:#38bdf866;background:linear-gradient(135deg,var(--bg2),#38bdf808)}
+.card h4{color:var(--text);font-size:1rem;margin-bottom:8px}
+.card p{font-size:.95rem}
+.big{font-size:2rem;font-weight:800;color:var(--accent);line-height:1.1}
+.lbl{font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:600;margin-top:4px}
+ul.b{list-style:none;display:flex;flex-direction:column;gap:10px}
+ul.b li{padding-left:22px;position:relative}
+ul.b li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th{text-align:left;padding:10px 14px;background:var(--bg3);color:var(--text);border-bottom:2px solid var(--border)}
+td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--muted)}
+td.n{text-align:right;font-variant-numeric:tabular-nums}
+.note{background:#f59e0b14;border:1px solid #f59e0b55;border-radius:10px;padding:14px 18px;font-size:.92rem;color:#fcd34d;line-height:1.5}
+.ph{color:var(--warn);font-weight:600}
+.foot{border-top:1px solid var(--border);border-bottom:none}
+.nav{display:flex;gap:10px;align-items:center}
+button{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:600}
+button:hover:not(:disabled){background:var(--accent);color:var(--bg);border-color:var(--accent)}
+button:disabled{opacity:.3;cursor:not-allowed}
+.count{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums;min-width:60px;text-align:center}
+.dots{display:flex;gap:6px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer}
+.dot.on{background:var(--accent);width:22px;border-radius:4px}
+@media (max-width:760px){.g2,.g3,.g4{grid-template-columns:1fr}h1{font-size:2.1rem}h2{font-size:1.6rem}.top,.foot{padding:12px 16px}.dots{display:none}}
+</style>
+</head>
+<body>
+
+<div class="top"><div>DELPER <span>GROUP</span></div><div class="tag">Confidential · Draft for counsel review</div></div>
+
+<main class="stage">
+<section class="slide active">
+  <h3>Seed Round Proposal</h3>
+  <h1>Software-Defined Logistics & Industrial Cyber-Physical Security</h1>
+  <p class="sub">A software and pilot-validated business, with a clear separation between what is measured today and what is projected.</p>
+  <div class="note"><strong>Status of this document:</strong> Figures marked <span class="ph">[TBD]</span> or labeled "target" or "assumption" have not been verified and must be replaced with evidence or removed before distribution. Nothing in this deck is an offer of securities. Terms are subject to counsel review.</div>
+</section>
+
+<section class="slide">
+  <h3>01 · The Problem</h3>
+  <h2>Friction in global trade and industrial operations</h2>
+  <div class="grid g2">
+    <div class="card"><h4>Logistics cost and delay</h4><p>Fragmented infrastructure and manual processes add cost and delay to cross-border trade. <span class="ph">[Source and figure to be added]</span></p></div>
+    <div class="card"><h4>Administrative drag</h4><p>Customs paperwork, compliance checks, and port demurrage consume time and money at every handoff. <span class="ph">[Source and figure to be added]</span></p></div>
+    <div class="card"><h4>OT security gaps</h4><p>Legacy industrial control systems are exposed to remote programming and intrusion, and cyber-physical engineering talent is scarce.</p></div>
+    <div class="card"><h4>B2B trust gaps</h4><p>Buyers face counterfeit goods, unverified inventory, and upfront payment risk without independent quality checks.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h3>02 · The Solution</h3>
+  <h2>Three software modules and one settlement layer</h2>
+  <div class="grid g2">
+    <div class="card hl"><h4>Delper Aegis · OT Security</h4><p>An inline industrial firewall. Target certification: IEC 62443 Security Level 4 <strong>(not yet achieved)</strong>. Includes a hardware write-lock option against remote programming.</p></div>
+    <div class="card hl"><h4>Verified Trade Ledger</h4><p>A buyer-first sourcing platform with third-party quality gates and a target 14-day settlement cycle, pending pilot validation.</p></div>
+    <div class="card hl"><h4>Customs & Logistics Middleware</h4><p>Software that automates cross-border declaration data and validation steps. Built on integrations that are in development.</p></div>
+    <div class="card hl"><h4>Settlement Token (under evaluation)</h4><p>A proposed corporate settlement layer. Design, reserve structure, and regulatory treatment are <strong>not finalized</strong> and require legal review before any use.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h3>03 · Business Model</h3>
+  <h2>Revenue assumptions to be tested in the pilot</h2>
+  <table>
+    <tr><th>Track</th><th>Mechanism</th><th class="n">Modeled value</th><th class="n">Status</th></tr>
+    <tr><td>A · Enterprise sourcing</td><td>Transaction fee on gross merchandise value</td><td class="n">15.184%</td><td class="n">Assumption</td></tr>
+    <tr><td>A · Enterprise sourcing</td><td>Capital turns per year (14-day settlement)</td><td class="n">26</td><td class="n">Target</td></tr>
+    <tr><td>A · Enterprise sourcing</td><td>Net spread on asset-secured facilities</td><td class="n">6.0%</td><td class="n">Assumption</td></tr>
+    <tr><td>B · Retail marketplace</td><td>Gross margin per order ($300 example)</td><td class="n">24.2% ($72.67)</td><td class="n">Modeled</td></tr>
+  </table>
+  <p>The fee and margin figures are internal models. The pilot must confirm that suppliers and buyers accept these terms before any of them are treated as revenue.</p>
+</section>
+
+<section class="slide">
+  <h3>04 · Use of Funds</h3>
+  <h2>Proposed allocation of the $8.00M round</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Track A · Enterprise systems · $4.00M</h4>
+      <ul class="b">
+        <li>Pre-shipment escrow working capital · $2.60M</li>
+        <li>Process architecture software · $0.86M</li>
+        <li>Core ERP integrations · $0.54M</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>Track B · India pilot deployment · $4.00M</h4>
+      <ul class="b">
+        <li>Core engineering team · $1.60M</li>
+        <li>Quality and audit infrastructure · $0.80M</li>
+        <li>Regulatory, compliance and legal · $0.50M</li>
+        <li>Growth and integration · $0.70M</li>
+        <li>Operational contingency · $0.40M</li>
+      </ul>
+    </div>
+  </div>
+  <p>Totals: Track A $4.00M + Track B $4.00M = <strong>$8.00M</strong>. Escrow working capital is a revolving balance and is not a spend.</p>
+</section>
+
+<section class="slide">
+  <h3>05 · Milestones</h3>
+  <h2>Gated targets, not guaranteed outcomes</h2>
+  <div class="grid g2">
+    <div class="card"><h4>Months 0–2 · Framework</h4><p>Obtain written letters of intent from banking, logistics, and inspection partners. <span class="ph">[Current LOI count: TBD]</span></p></div>
+    <div class="card"><h4>Months 2–9 · Pilot</h4><p>Run a closed pilot of 300 to 500 transactions to test supplier margins and fee acceptance.</p></div>
+    <div class="card"><h4>Years 2–5 · Scale</h4><p>Target 15,000 verified sellers. Larger fabrication spend is released only if pilot gates are met.</p></div>
+    <div class="card"><h4>Hardware testing</h4><p>Planned stress test: malformed-frame injection at 5,000,000 frames per hour, to confirm the device self-quarantines without losing control sync. <span class="ph">[Test report: not yet performed]</span></p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h3>06 · Commodity Sourcing Activity</h3>
+  <h2>Proposed trade activity; income is not guaranteed</h2>
+  <div class="grid g3">
+    <div class="card"><div class="big">1.0M t</div><div class="lbl">Target annual palm oil volume</div></div>
+    <div class="card"><div class="big">0</div><div class="lbl">Signed sales contracts (confirm)</div></div>
+    <div class="card"><div class="big">TBD</div><div class="lbl">Sourcing commission and net income</div></div>
+  </div>
+  <div class="note"><strong>No investor principal protection is offered.</strong> Commodity trades depend on price, counterparty performance, shipping, and regulatory conditions. Letters of credit, buyer contracts, and certifications must be in hand before this activity is described as a source of repayment. The earlier version of this deck described a Year 1 repayment of the investor's principal; that claim has been removed.</div>
+</section>
+
+<section class="slide">
+  <h3>07 · Long-Term Vision</h3>
+  <h2>Phase 4: illustrative concept, not an investable structure</h2>
+  <p>The broader infrastructure concept, including a multi-trillion-dollar program across transport and manufacturing, is shown only as a long-term direction. <strong>No sovereign, multilateral, or bond-market commitment has been obtained.</strong> No credit guarantee from any development bank is assumed or implied.</p>
+  <div class="grid g2">
+    <div class="card"><h4>What this round funds</h4><p>Software, pilot validation, and the verification layer. Nothing in this round depends on the Phase 4 concept.</p></div>
+    <div class="card"><h4>What would need to be true</h4><p>Pilot results, independent engineering validation, government and financing partners, and separate legal structures for any infrastructure financing.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h3>08 · Risks</h3>
+  <h2>Material risks investors should weigh</h2>
+  <div class="grid g2">
+    <div class="card"><h4>Commodity and counterparty</h4><p>Price swings, buyer default, cargo loss, and supplier fraud can each cause losses.</p></div>
+    <div class="card"><h4>Execution</h4><p>Pilot results may not validate fee levels. Integration with ERP and customs systems may take longer and cost more than planned.</p></div>
+    <div class="card"><h4>Technology and certification</h4><p>Security certifications, hardware performance, and the stress-test results are not yet proven.</p></div>
+    <div class="card"><h4>Legal and regulatory</h4><p>Securities treatment of the round, token regulation, cross-border trade rules, and ESG sourcing rules all apply. Counsel review is required.</p></div>
+    <div class="card"><h4>Key person and talent</h4><p>The plan depends on scarce cyber-physical and platform engineering talent.</p></div>
+    <div class="card"><h4>Loss of capital</h4><p>Investors may lose some or all of their investment. No return or repayment is guaranteed.</p></div>
+  </div>
+</section>
+
+<section class="slide">
+  <h3>09 · Governance & ESG</h3>
+  <h2>Controls the company intends to put in place</h2>
+  <ul class="b">
+    <li><strong>Sourcing policy:</strong> commodity sourcing will require verified certification (such as RSPO for palm oil) and traceability. Certification status: <span class="ph">[TBD]</span></li>
+    <li><strong>Board oversight:</strong> independent audit oversight and third-party verified KPI reporting, planned for the holding structure.</li>
+    <li><strong>Separation:</strong> training and other unrelated liabilities kept apart from core software and trade assets.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h3>10 · Terms & Next Steps</h3>
+  <h2>Terms to be set with counsel</h2>
+  <table>
+    <tr><th>Term</th><th class="n">Value</th></tr>
+    <tr><td>Round size</td><td class="n">$8.00M (proposed)</td></tr>
+    <tr><td>Valuation and equity percentage</td><td class="n"><span class="ph">[To be set with counsel]</span></td></tr>
+    <tr><td>Security type and rights</td><td class="n"><span class="ph">[To be set with counsel]</span></td></tr>
+  </table>
+  <ul class="b">
+    <li>Engage a securities attorney to review the instrument, offering materials, and any token design.</li>
+    <li>Collect LOIs, pilot data, and certifications for a verified data room.</li>
+    <li>Contact: <span class="ph">info@delperecom.com</span></li>
+  </ul>
+</section>
+</main>
+
+<div class="foot">
+  <div class="nav">
+    <button id="prev">← Prev</button>
+    <span class="count" id="count">1 / 10</span>
+    <button id="next">Next →</button>
+  </div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<script>
+(function(){
+  var slides=document.querySelectorAll('.slide'),i=0,n=slides.length;
+  var dots=document.getElementById('dots');
+  for(var k=0;k<n;k++){var d=document.createElement('div');d.className='dot';d.setAttribute('data-i',k);dots.appendChild(d);}
+  function show(j){
+    if(j<0||j>=n)return;
+    slides[i].classList.remove('active');
+    i=j;slides[i].classList.add('active');
+    document.getElementById('count').textContent=(i+1)+' / '+n;
+    document.getElementById('prev').disabled=(i===0);
+    document.getElementById('next').disabled=(i===n-1);
+    var ds=dots.children;for(var m=0;m<ds.length;m++){ds[m].classList.toggle('on',m===i);}
+    document.querySelector('.stage').scrollTop=0;
+  }
+  document.getElementById('prev').onclick=function(){show(i-1);};
+  document.getElementById('next').onclick=function(){show(i+1);};
+  dots.onclick=function(e){var t=e.target;if(t.getAttribute&&t.getAttribute('data-i')!==null)show(+t.getAttribute('data-i'));};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'){show(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){show(i-1);}
+  });
+  show(0);
+})();
+</script>
+</body>
+</html>
